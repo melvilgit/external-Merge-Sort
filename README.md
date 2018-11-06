@@ -16,7 +16,7 @@ Example , If we  have to Sort 100 numbers with each number 1KB and our RAM size 
 > Merge Phase
 * Do a [K-way merge](https://en.wikipedia.org/wiki/K-way_merge_algorithm)  with each smaller files one by one. Inline the details .
 * After the Split Phase , A list of file handler of all the splitted files will be stored - **sortedTempFileHandlerList**
-* We create a list of heapnode - **heapnodes**. Each heapnode will  stores the actual entry and also the file which owns it . The heapnodes is heapified and it will be a min-heap.
+* Now, We creates a list of heapnode - **heapnodes**. Each heapnode will  stores the actual entry read from the file and also the file which owns it . The heapnodes is heapified and it will be a min-heap.
 * Assuming there 10 files , heapnodes will takes 10KB only (each number assume 1KB) .
    - Loop While Least Element  (the top of heap ) is **INT_MAX**
      * Picks the node with least element from heapnodes  . ( 0(1) since heapnodes is a min heap )
