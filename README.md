@@ -103,7 +103,7 @@ Finds the next element of the file which owns   min element *5*  . . </br>
     10   8                               10   INT_MAX
 Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6 7* . </br>
 If we loop this process , we would reaches a point where , the heap would looks like below 
-and the  sortedOutputFile - *1 2 3 4 5 6 7 8 9 10*  . </br>We breaks at the point when the min element from heap becomes *INT_MAX* .
+and the </br> sortedOutputFile - *1 2 3 4 5 6 7 8 9 10*  . </br>We breaks at the point when the min element from heap becomes *INT_MAX* .
 
                            INT_MAX                       
                             /   \
