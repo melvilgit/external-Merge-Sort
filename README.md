@@ -45,8 +45,8 @@ Next Construct a Min Heap with top element from each files
                         /  \                         *
                        4    3     
 
-Now picks the least Element from the min heap and write it to sortedOutputFile - *1*
-Finds the next element of the file which owns   min element *1*  .
+Now picks the least Element from the min heap and write it to sortedOutputFile - *1*. </br>
+Finds the next element of the file which owns   min element *1* . </br>
 The no is *7* from temp3 . Move  it to heap.
 
           7                                    2
@@ -54,8 +54,8 @@ The no is *7* from temp3 . Move  it to heap.
        2     5      Heapify -->             3    5	
       /  \                                 / \
      4    3                               4   7 
-Picks the least element  *2* and moves it to  sortedOutputFile - *1 2*
-Finds the next element of the file which owns   min element *2*  .
+Picks the least element  *2* and moves it to  sortedOutputFile - *1 2*. </br>
+Finds the next element of the file which owns   min element *2* . </br>
 The no is *10* from temp5 . Move  it to heap.
 
           10                                   3
@@ -63,8 +63,8 @@ The no is *10* from temp5 . Move  it to heap.
        3     5      Heapify -->             4    5	
       /  \                                 / \
      4    7                               10   7 
-Picks the least element  *3* and moves it to  sortedOutputFile - *1 2 3*
-Finds the next element of the file which owns   min element *3*  .
+Picks the least element  *3* and moves it to  sortedOutputFile - *1 2 3*. </br>
+Finds the next element of the file which owns   min element *3* . </br>
 The no is *6* from temp2 . Move  it to heap.
 
           6                                   4
@@ -72,8 +72,8 @@ The no is *6* from temp2 . Move  it to heap.
        4     5      Heapify -->             6    5	
       /  \                                 / \
     10   7                               10   7 
-Picks the least element  *4* and moves it to  sortedOutputFile - *1 2 3 4*
-Finds the next element of the file which owns   min element *4*  .
+Picks the least element  *4* and moves it to  sortedOutputFile - *1 2 3 4*. </br>
+Finds the next element of the file which owns   min element *4* . </br>
 The no is *9* from temp4 . Move  it to heap.
 
           9                                   5
@@ -82,9 +82,9 @@ The no is *9* from temp4 . Move  it to heap.
       /  \                                 / \
     10   7                               10   7 
 
-Picks the least element  *5* and moves it to  sortedOutputFile - *1 2 3 4 5*
-Finds the next element of the file which owns   min element *5*  .
-The no is *8* from temp1 . Move  it to heap.
+Picks the least element  *5* and moves it to  sortedOutputFile - *1 2 3 4 5*. </br>
+Finds the next element of the file which owns   min element *5*. </br>
+The no is *8* from temp1 . Move  it to heap
 
           8                                   6
         /  \                                 /  \
@@ -92,18 +92,18 @@ The no is *8* from temp1 . Move  it to heap.
       /  \                                 / \
     10   7                               10   8 
 
-Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6*
-Finds the next element of the file which owns   min element *5*  .
-<b> We have see EOF . So mark the read no as  <i>INT_MAX </i></b> 
+Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6* . </br>
+Finds the next element of the file which owns   min element *5*  . . </br>
+<b> We have see EOF . So mark the read no as  <i>INT_MAX </i></b>  . </br>
 
        INT_MAX                                 7
         /  \                                 /  \
        7    9      Heapify -->              8     9	
       /  \                                 / \
     10   8                               10   INT_MAX
-Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6 7*
+Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6 7* . </br>
 If we loop this process , we would reaches a point where , the heap would looks like below 
-and the    sortedOutputFile - *1 2 3 4 5 6 7 8 9 10*  and we breaks at the point when the min element from heap becomes *INT_MAX*
+and the  sortedOutputFile - *1 2 3 4 5 6 7 8 9 10*  . </br>We breaks at the point when the min element from heap becomes *INT_MAX* .
 
                            INT_MAX                       
                             /   \
