@@ -27,6 +27,91 @@ Example , If we  have to Sort 100 numbers with each number 1KB and our RAM size 
      *  *Continue ;*
       
 * At the end of the Merge Phase **sortedLargeFile** will have all the elements in sorted  order .
+ 
+## Example </br>
+Say We have a file largefile with the following Contents 
+
+5 8 6 3 7 1 4 9 10 2
+
+In Split Phase ,We Split them into the   Sorted chunks in 5 separate temp files.
+
+temp1 - 5 ,8   &nbsp;&nbsp; temp2 - 3 ,6      &nbsp;&nbsp;  temp3 - 1, 7 &nbsp;&nbsp;  temp4 -4 , 9  &nbsp;&nbsp; temp5 - 2 ,10 
+
+Next Construct a Min Heap with top element from each files
+                       
+                             1                       *
+                           /  \
+                          2    5
+                        /  \                         *
+                       4    3     
+
+Now picks the least Element from the min heap and write it to sortedOutputFile - *1*
+Finds the next element of the file which owns   min element *1*  .
+The no is *7* from temp3 . Move  it to heap.
+
+          7                                    2
+        /  \                                 /  \
+       2     5      Heapify -->             3    5	
+      /  \                                 / \
+     4    3                               4   7 
+Picks the least element  *2* and moves it to  sortedOutputFile - *1 2*
+Finds the next element of the file which owns   min element *2*  .
+The no is *10* from temp5 . Move  it to heap.
+
+          10                                   3
+        /  \                                 /  \
+       3     5      Heapify -->             4    5	
+      /  \                                 / \
+     4    7                               10   7 
+Picks the least element  *3* and moves it to  sortedOutputFile - *1 2 3*
+Finds the next element of the file which owns   min element *3*  .
+The no is *6* from temp2 . Move  it to heap.
+
+          6                                   4
+        /  \                                 /  \
+       4     5      Heapify -->             6    5	
+      /  \                                 / \
+    10   7                               10   7 
+Picks the least element  *4* and moves it to  sortedOutputFile - *1 2 3 4*
+Finds the next element of the file which owns   min element *4*  .
+The no is *9* from temp4 . Move  it to heap.
+
+          9                                   5
+        /  \                                 /  \
+       6     5      Heapify -->             6    9	
+      /  \                                 / \
+    10   7                               10   7 
+
+Picks the least element  *5* and moves it to  sortedOutputFile - *1 2 3 4 5*
+Finds the next element of the file which owns   min element *5*  .
+The no is *8* from temp1 . Move  it to heap.
+
+          8                                   6
+        /  \                                 /  \
+       6     9      Heapify -->             7    9	
+      /  \                                 / \
+    10   7                               10   8 
+
+Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6*
+Finds the next element of the file which owns   min element *5*  .
+<b> We have see EOF . So mark the read no as  <i>INT_MAX </i></b> 
+
+       INT_MAX                                 7
+        /  \                                 /  \
+       7    9      Heapify -->              8     9	
+      /  \                                 / \
+    10   8                               10   INT_MAX
+Picks the least element  *6* and moves it to  sortedOutputFile - *1 2 3 4 5 6 7*
+If we loop this process , we would reaches a point where , the heap would looks like below 
+and the    sortedOutputFile - *1 2 3 4 5 6 7 8 9 10*  and we breaks at the point when the min element from heap becomes *INT_MAX*
+
+                           INT_MAX                       
+                            /   \
+                        INT_MAX  INT_MAX
+                        /    \                         
+                     INT_MAX INT_MAX        
+
+                 
 
 
 
