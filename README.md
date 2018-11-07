@@ -39,10 +39,10 @@ temp1 - 5 ,8   &nbsp;&nbsp; temp2 - 3 ,6      &nbsp;&nbsp;  temp3 - 1, 7 &nbsp;&
 
 Next Construct a Min Heap with top element from each files
                        
-                             1                       *
+                             1                       
                            /  \
                           2    5
-                        /  \                         *
+                        /  \                         
                        4    3     
 
 Now picks the least Element from the min heap and write it to sortedOutputFile - *1*. </br>
